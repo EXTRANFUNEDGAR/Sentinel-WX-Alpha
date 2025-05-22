@@ -5,6 +5,8 @@ from telegram import Update
 from telegram.ext import Application, CommandHandler, ContextTypes
 from telegram.ext import ApplicationBuilder
 import asyncio
+from telegram import BotCommand
+
 
 estado_alerta = {
     "mq135": False,
@@ -120,6 +122,18 @@ async def chat_id(update: Update, context: ContextTypes.DEFAULT_TYPE):
     )
 
 
+
+async def establecer_comandos(bot_app):
+    comandos = [
+        BotCommand("start", "👋 Mostrar mensaje de bienvenida"),
+        BotCommand("datos", "📊 Ver datos actuales de sensores"),
+        BotCommand("estado", "🚨 Ver alertas activas"),
+        BotCommand("id", "🆔 Mostrar tu chat ID"),
+    ]
+    await bot_app.bot.set_my_commands(comandos)
+
+
+
 if __name__ == "__main__":
     app = ApplicationBuilder().token(TOKEN).build()
 
@@ -134,7 +148,12 @@ if __name__ == "__main__":
     async def iniciar_alertas(app: Application):
         asyncio.create_task(alerta_automatica(app))
 
-    app.post_init = iniciar_alertas
+    async def iniciar_todo(app):
+        await establecer_comandos(app)
+        asyncio.create_task(alerta_automatica(app))
+
+    app.post_init = iniciar_todo
+
 
     print("🤖 Bot corriendo con alertas automáticas...")
     app.run_polling()
