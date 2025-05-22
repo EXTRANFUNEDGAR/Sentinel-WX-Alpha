@@ -108,9 +108,17 @@ Desde la web puedes elegir un rango de fechas y exportar un archivo `.csv`.
 
 ---
 
+## 📚 Documentación
+
+Consulta la documentación completa y manual de instalación en:
+
+➡️ [`docs/manual_instalacion.md`](docs/manual_instalacion.md)
+
+Incluye pasos desde cero, configuración del ESP32, servicios, y despliegue completo.
+
+
 ## 🛠️ Autor
 
 Proyecto desarrollado por **Edgar Enrique Delgado Sánchez**  
-📫 Contacto: [Telegram](https://t.me/EXTRANFUNEDGAR)
 
 ---
