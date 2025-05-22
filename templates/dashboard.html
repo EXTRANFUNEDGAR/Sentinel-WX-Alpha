@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Estación Meteorológica</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/luxon@3/build/global/luxon.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-luxon"></script>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+<body>
+  <div class="container">
+    <h1>Estación Meteorológica</h1>
+    <div class="timestamp">Última lectura: <span id="timestamp">-</span></div>
+
+    <form action="/exportar" method="get">
+      <label>
+        Desde:
+        <input type="datetime-local" name="desde" required>
+      </label>
+      &nbsp;&nbsp;
+      <label>
+        Hasta:
+        <input type="datetime-local" name="hasta" required>
+      </label>
+      &nbsp;&nbsp;
+      <button type="submit">📥 Exportar CSV</button>
+    </form>
+
+<button id="boton-comparar" onclick="mostrarComparacion()" style="margin: 10px auto; display: block;">
+  📊 Comparar dos fechas
+</button>
+
+
+<div id="seccion-comparacion" style="display: none; margin-top: 20px;">
+  <form id="comparador" style="text-align:center; margin-bottom: 25px;">
+    <label>Desde 1: <input type="datetime-local" name="desde1" required></label>
+    <label>Hasta 1: <input type="datetime-local" name="hasta1" required></label>
+    <br><br>
+    <label>Desde 2: <input type="datetime-local" name="desde2" required></label>
+    <label>Hasta 2: <input type="datetime-local" name="hasta2" required></label>
+    <br><br>
+    <button type="submit">Comparar</button>
+  </form>
+
+  <div id="resultado-comparacion" style="text-align:center;"></div>
+
+</div>
+
+
+    <div class="cards">
+      <div class="card" id="card-temp">
+        <div class="label">Temperatura</div>
+        <div class="value"><span id="temp">-</span> °C</div>
+        <small>Min: <span id="min-temp">-</span> | Max: <span id="max-temp">-</span></small>
+      </div>
+      <div class="card" id="card-hum">
+        <div class="label">Humedad</div>
+        <div class="value"><span id="hum">-</span> %</div>
+        <small>Min: <span id="min-hum">-</span> | Max: <span id="max-hum">-</span></small>
+      </div>
+      <div class="card" id="card-pres">
+        <div class="label">Presión</div>
+        <div class="value"><span id="pres">-</span> hPa</div>
+        <small>Min: <span id="min-pres">-</span> | Max: <span id="max-pres">-</span></small>
+      </div>
+      <div class="card" id="card-mq">
+        <div class="label">MQ-135</div>
+        <div class="value"><span id="mq">-</span></div>
+        <small>Min: <span id="min-mq">-</span> | Max: <span id="max-mq">-</span></small>
+      </div>
+      <div class="card" id="card-lluvia">
+        <div class="label">Lluvia</div>
+        <div class="value"><span id="lluvia">-</span></div>
+        <small>Min: <span id="min-lluvia">-</span> | Max: <span id="max-lluvia">-</span></small>
+      </div>
+    </div>
+
+    <canvas id="chartTemp" height="80"></canvas>
+    <canvas id="chartHum" height="80"></canvas>
+    <canvas id="chartPres" height="80"></canvas>
+  </div>
+
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
