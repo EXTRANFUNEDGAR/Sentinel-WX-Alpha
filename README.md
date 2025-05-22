@@ -71,10 +71,25 @@ O usa servicios systemd para que se inicien automáticamente.
 
 ## 📬 Comandos disponibles en Telegram
 
-- `/start` → mensaje de bienvenida
-- `/datos` → obtiene la última lectura en tiempo real
+El sistema incluye un bot de Telegram con soporte para:
 
+| Comando     | Descripción                                                  |
+|-------------|--------------------------------------------------------------|
+| `/start`    | Muestra un mensaje de bienvenida.                            |
+| `/datos`    | Devuelve los datos actuales de todos los sensores.           |
+| `/estado`   | Muestra alertas activas junto con sus valores actuales.      |
 ---
+
+### 🔔 Alertas automáticas
+
+El bot revisa los sensores cada 10 segundos y enviará una alerta **solo una vez** por cada condición crítica. Se reactivará si el valor se normaliza y luego vuelve a superar el umbral.
+
+Las condiciones actuales para activar alertas son:
+
+- `MQ-135 > 300`  
+- `Temperatura > 35 °C`  
+- `Lluvia < 2000` (valor analógico del sensor Raindrop)
+
 
 ## 📦 Exportar datos
 

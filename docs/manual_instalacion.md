@@ -51,6 +51,7 @@ Crea el archivo `.env` en la raíz:
 
 ```env
 TELEGRAM_TOKEN=TU_TOKEN_DEL_BOT
+CHAT_ID=tu_chat_id
 ```
 
 ---
