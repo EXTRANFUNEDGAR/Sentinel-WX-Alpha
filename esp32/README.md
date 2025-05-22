@@ -45,13 +45,6 @@ Este módulo se encarga de leer los sensores y enviar los datos a la Raspberry P
 
 ---
 
-## 📂 Archivos
-
-- `estacion_esp32.ino`: Código Arduino que se carga en el ESP32
-- `README.md`: Este archivo
-- `conexiones.jpg` (opcional): Imagen del diagrama de conexiones
-
----
 
 ## 📝 Notas
 
