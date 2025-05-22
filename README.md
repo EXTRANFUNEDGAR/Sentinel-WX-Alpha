@@ -37,24 +37,13 @@ flask_dashboard/
 - Entorno virtual (`venv`)
 
 ---
+## 📚 Documentación
 
-## 🔧 Instalación
+Consulta la documentación completa y manual de instalación en:
 
-```bash
-git clone https://github.com/EXTRANFUNEDGAR/Sentinel-WX-Alpha.git
-cd Sentinel-WX-Alpha
-python3 -m venv venv
-source venv/bin/activate
-pip install -r requirements.txt
-```
+➡️ [`docs/manual_instalacion.md`](docs/manual_instalacion.md)
 
-Crea un archivo `.env` con tus variables:
-
-```env
-TELEGRAM_TOKEN=TU_TOKEN_AQUI
-```
-
----
+Incluye pasos desde cero, configuración del ESP32, servicios, y despliegue completo.
 
 ## 🧠 Uso
 
@@ -108,13 +97,7 @@ Desde la web puedes elegir un rango de fechas y exportar un archivo `.csv`.
 
 ---
 
-## 📚 Documentación
 
-Consulta la documentación completa y manual de instalación en:
-
-➡️ [`docs/manual_instalacion.md`](docs/manual_instalacion.md)
-
-Incluye pasos desde cero, configuración del ESP32, servicios, y despliegue completo.
 
 
 ## 🛠️ Autor
