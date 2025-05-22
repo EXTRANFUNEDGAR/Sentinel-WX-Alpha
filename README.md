@@ -107,15 +107,6 @@ Desde la web puedes elegir un rango de fechas y exportar un archivo `.csv`.
 
 ---
 
-## 🛡️ Seguridad
-
-- El archivo `.env` está en `.gitignore`
-- Tokens y contraseñas no se suben a GitHub
-
----
-
-
-
 
 ## 🛠️ Autor
 

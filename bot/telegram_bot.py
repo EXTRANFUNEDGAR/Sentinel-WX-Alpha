@@ -6,6 +6,8 @@ from telegram.ext import Application, CommandHandler, ContextTypes
 from telegram.ext import ApplicationBuilder
 import asyncio
 from telegram import BotCommand
+from telegram import ReplyKeyboardMarkup
+
 
 
 estado_alerta = {
@@ -22,7 +24,17 @@ CHAT_ID = os.getenv("CHAT_ID")  # ← reemplaza con tu chat_id
 
 # /start
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    await update.message.reply_text("👋 Hola, envía /datos para ver las lecturas actuales.")
+    keyboard = [
+        ["/id", "/estado"],
+        ["/datos"]
+    ]
+    markup = ReplyKeyboardMarkup(keyboard, resize_keyboard=True)
+
+    await update.message.reply_text(
+        "👋 Bienvenido. Elige una opción del teclado o usa los comandos.",
+        reply_markup=markup
+    )
+
 
 # /datos
 async def datos(update: Update, context: ContextTypes.DEFAULT_TYPE):
