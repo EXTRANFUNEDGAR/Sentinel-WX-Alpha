@@ -78,6 +78,8 @@ El sistema incluye un bot de Telegram con soporte para:
 | `/start`    | Muestra un mensaje de bienvenida.                            |
 | `/datos`    | Devuelve los datos actuales de todos los sensores.           |
 | `/estado`   | Muestra alertas activas junto con sus valores actuales.      |
+| `/id`       | Obteber tu caht_id                                           |
+
 ---
 
 ### 🔔 Alertas automáticas

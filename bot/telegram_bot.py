@@ -111,6 +111,13 @@ async def estado(update: Update, context: ContextTypes.DEFAULT_TYPE):
     except Exception as e:
         await update.message.reply_text(f"❌ Error al obtener estado: {e}")
 
+# /id
+async def chat_id(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    chat_id = update.effective_chat.id
+    await update.message.reply_text(
+        f"🆔 Tu chat ID es: `{chat_id}`",
+        parse_mode="Markdown"
+    )
 
 
 if __name__ == "__main__":
@@ -119,6 +126,8 @@ if __name__ == "__main__":
     app.add_handler(CommandHandler("start", start))
     app.add_handler(CommandHandler("datos", datos))
     app.add_handler(CommandHandler("estado", estado))
+    app.add_handler(CommandHandler("id", chat_id))
+
 
 
     
