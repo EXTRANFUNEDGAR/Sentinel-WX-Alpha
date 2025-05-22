@@ -110,6 +110,7 @@ Desde la web puedes elegir un rango de fechas y exportar un archivo `.csv`.
 
 ## 🛠️ Autor
 
-Proyecto desarrollado por **Edgar Enrique Delgado Sánchez**  
+Proyecto desarrollado por [Edgar Enrique Delgado Sánchez](https://github.com/EXTRANFUNEDGAR)
+ 
 
 ---
